@@ -28,8 +28,10 @@ function deleteToDo(event) {
 
 function paintToDo(newTodo) {
     const li = document.createElement("li");  //11.js에서 html element인 li태그 만들기(변수이름을 li가 아닌 potato라고 해도됨)
+    li.id = newTodo.id;  //38.item의 id로 li태그들이 구별됨  [6강의]**데이터베이스(todos array)에 id를 도입했다->todos array안에 겹치는 item들 있어도 구별해서 삭제 가능!
     const span = document.createElement("span");  //12.js에서 html element인 (todo글 넣을)span태그 만들기(todo글 뿐만 아니라 삭제버튼도 만들거기때문에 li가 아니라 span에다가)
-    span.innerText = newTodo;  //13.span태그의 텍스트는(input의 value값이 들어있는 newTodo변수)
+    //span.innerText = newTodo;  //13.span태그의 텍스트는(input의 value값이 들어있는 newTodo변수)
+    span.innerText = newTodo.text;  //37.object의 text프로퍼티로
     const button = document.createElement("button");  //15.js에서 html element인 (삭제버튼이 될)button태그 만들기
     button.innerText = "X";  //16.
     button.addEventListener("click", deleteToDo);  //19.버튼 클릭하면 todo 삭제되도록
@@ -44,10 +46,15 @@ function handleToDoSubmit(event) {  //이벤트객체를 함수의 첫번째 인
     event.preventDefault();  //6.submit해도 새로고침 안되게(*코드 처음부터 다시 실행안하고 이어나감~)
     const newTodo = toDoInput.value;  //8.input의 value를 **'newTodo 변수에 저장(복사)하기'
     toDoInput.value = "";  //9.input에 입력한 값 지우기(input.value에 뭔짓을 해도 newToDo변수에 영향안끼침)  [0강의]
-    toDos.push(newTodo); //23.paint하기 전에 newTodo를 toDos array에 push하기
-    paintToDo(newTodo);  //10.newTodo변수(input의 value값이 들어있는)를 paintToDo함수로 보내기
+    const newTodoObj = {
+        text: newTodo,
+        id: Date.now()
+    };  //34.텍스트형식이 아니라, id도입해서 object형식으로
+    toDos.push(newTodoObj);  //35.
+    //toDos.push(newTodo); //23.paint하기 전에 newTodo를 toDos array에 push하기   
+    //paintToDo(newTodo);  //10.newTodo변수(input의 value값이 들어있는)를 paintToDo함수로 보내기
+    paintToDo(newTodoObj);  //36.
     saveToDos();  //24.
-
 }
 
 
@@ -63,8 +70,8 @@ if (savedToDos !== null) {
 } //localstorage에 저장돼있는 todo들을 새로고침했을 때 화면에 paint하는
 //28.문제 발생:새로고침하고 새로운 todo들 추가하면 localstorage에 기존 todo들 사라지고 새로운 todo들로 덮어씌워짐->새로고침해서 코드 다시 실행될때 todos array는 항상 비어있기 때문에([])
 //31.[5강의]문제:todo들 삭제했는데 새로고침하면 다시 화면에 생겨남->localstorage에서는 삭제되지 않았기 때문에
-
-
+//32.todos array(데이터베이스)가 ["a","b","c","a"]인 경우 어떤 a를 삭제했는지 모르기 때문에, todos array를 id를 도입해서(item들 구별하기 위해!!) [{id:1212(랜덤한 id), text:"drink"(todo내용)}] 텍스트 말고 object형식으로 바꾸고 싶다
+//33.랜덤한 id(숫자) 만드는 법->Date.now() 사용
 
 
 //*새로고침의 유무
@@ -76,7 +83,21 @@ if (savedToDos !== null) {
 
 //*js에서는, forEach()가 array에 있는 각각의 item에 대해서 function을 실행할 수 있게 해준다
 
+//todos array가 데이터베이스, localstorage는 데이터베이스가 아니라 todos array를 복사해둔곳
+
+//filter->array에서 item을 지우는게 아니라, 예전array는 그대로 있고 '지우고 싶은 item을 제외하고 새array를 만든다'
+//filter->forEach와 비슷한 기능도 가짐
+/*
+function sexyFilter() {
+
+}
+
+[1,2,3,4].filter(sexyFilter)->1,2,3,4에 '각각' sexyFilter함수가 실행되는데, 새array에 1,2,3,4를 포함하고 싶으면 sexyFilter함수가 반드시 true를 return해야한다(false를 return하면 제외된다)
+*/
 
 
 
 
+
+
+//4분
