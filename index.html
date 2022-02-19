@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yoojin's Profile</title>
+    <meta name="description" content="Profile for Yoojin" />  
+    <meta name="author" content="Yoojin" />
+
+    <script src="https://kit.fontawesome.com/efcaab9904.js" crossorigin="anonymous"></script>  <!-- Font Awesome의 kit code 추가해서 '아이콘' 사용 -->
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />  
+    
+    <link rel="icon" type="image/png" href="imgs/favicon.png" />  
+
+    <link rel="stylesheet" href="style.css" /> 
+    <script src="main.js" defer></script>  
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav id="navbar">
+        <div class="navbar__logo">  <!-- 2. --> <!-- BEM사용 -->
+            <i class="fas fa-puzzle-piece"></i>  <!--3.아이콘과 이름-->
+            <a href="#">Yoojin</a>
+        </div>
+        <ul class="navbar__menu">
+            <li class="navbar__menu__item" data-link="#home">Home</li>  <!--3.-->
+            <li class="navbar__menu__item" data-link="#about">About</li>  <!--s.'data'에 이동할 섹션의 id를 정의(추가)-->
+            <li class="navbar__menu__item" data-link="#skills">Coding</li>
+            <li class="navbar__menu__item" data-link="#work">Like</li>
+            <li class="navbar__menu__item" data-link="#testimonials">Testimonials</li>
+            <li class="navbar__menu__item" data-link="#contact">Contact</li>
+        </ul>
+        <!--Toggle button(추가)-->
+        <button class="navbar__toggle-btn">
+            <i class="fas fa-bars"></i>
+        </button>
+    </nav>
+
+    <!-- Home -->
+    <section id="home">
+        <div class="home__container"> <!--추가-->
+            <img src="imgs/profile.png" alt="Yoojin's profile photo" class="home__avatar">  <!--2.-->
+            <h1 class="home__title">Hello, <br /> I'm Yoojin :)</h1>  <!-- br태그로 줄바꿈-->
+            <h2 class="home__description">A Potential Frontend Engineer</h2>
+            <button class="home__contact">Contact Me</button>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section section__container">  <!-- *Box태그 -->
+
+        <h1>About me</h1>  <!-- 공통적으로 쓰이기 때문에 bem 사용X-->
+
+        <p>
+        I'm a junior frontend engineer. I've been studying html,css,javascript for 3 months. 
+        I'm currently studying in Ewha Womans University.
+        </p>  
+
+        <div class="about__majors">  <!-- *Box태그 -->
+            <div class="major">  <!-- *Box태그 -->
+                <div class="majors__icon">  
+                    <i class="fab fa-html5"></i>
+                </div>  
+                <h2 class="majors__title">HTML,CSS,JS</h2>
+                <div class="majors__description">etc</div>
+            </div>
+            <div class="major">  
+                <div class="majors__icon">  
+                    <i class="fab fa-react"></i>
+                </div>  
+                <h2 class="majors__title">React</h2>
+                <div class="majors__description">etc</div>
+            </div>
+        </div>
+        
+    </section>
+    
+    <!-- Coding -->
+    <section id="skills" class="section">
+
+        <div class="section__container"> <!--추가-->
+
+            <h1>Coding</h1>  <!-- 공통적으로 쓰이는 것-->
+            <h2>Skills &amp; Attributes</h2>
+            <p>
+                Passion for learning new technologies. 
+                Capable of working within team environment and independently.
+            </p>
+    
+            <div class="skillset">  <!-- 박스태그 -->
+                
+                <div class="skillset__left">  <!-- 박스태그 -->
+                    <h3 class="skillset__title">Skills</h3>
+                    <div class="skill">  <!-- 박스태그 -->
+                        <div class="skill__description">
+                            <span>HTML</span>
+                            <span>70%</span>
+                        </div>
+                        <div class="skill__bar">  <!--프로그래스바(나중에 css로 스타일링)-->
+                            <div class="skill__value" style="width: 70%"></div> <!--*css대신 'html태그에 style속성' 이용!-->
+                        </div>
+                    </div>
+                    <div class="skill">  
+                        <div class="skill__description">
+                            <span>CSS</span>
+                            <span>70%</span>
+                        </div>
+                        <div class="skill__bar">  
+                            <div class="skill__value" style="width: 70%"></div>
+                        </div>
+                    </div>
+                    <div class="skill">  
+                        <div class="skill__description">
+                            <span>JAVASCRIPT</span>
+                            <span>70%</span>
+                        </div>
+                        <div class="skill__bar">  
+                            <div class="skill__value" style="width: 70%"></div>
+                        </div>
+                    </div>
+                    <div class="skill">  
+                        <div class="skill__description">
+                            <span>REACT</span>
+                            <span>30%</span>
+                        </div>
+                        <div class="skill__bar">  
+                            <div class="skill__value" style="width: 30%"></div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="skillset__right">  <!-- 박스태그 -->
+                    <div class="tools">  <!-- 박스태그 -->
+                        <h3 class="skillset__title">Tools</h3>
+                        <ul class="tools__list">
+                            <li><span>Visual Studio Code</span></li>  <!--(li>span)*2-->
+                        </ul>
+                    </div>
+                    <div class="etc">
+                        <h3 class="skillset__title">Etc</h3>
+                        <ul class="etc__list">  <!--ul.etc__list>(li>span)*2-->
+                            <li><span>Git</span></li>
+                            <li><span>Python</span></li>
+                        </ul>
+                    </div>
+                </div>
+    
+            </div>
+    
+        </div>
+
+    </section>
+   
+    <!-- Like -->
+    <section id="work" class="section">
+        <div class="section__container">  <!--추가-->
+            <h1>Like</h1>
+            <h3>projects</h3>
+            
+            <div class="work__categories">  <!--박스태그-->
+                <button class="category__btn active" data-filter="*"> <!--active라는 class 추가-->
+                    All<span class="category__count">6</span>
+                </button>
+                <button class="category__btn" data-filter="hc">
+                    Movie<span class="category__count">2</span>
+                </button>
+                <button class="category__btn" data-filter="hcj">
+                    Music<span class="category__count">2</span>
+                </button>
+                <button class="category__btn" data-filter="react">
+                    Food<span class="category__count">2</span>
+                </button>  
+            </div>
+    
+            <div class="work__projects">
+                <a href="#" class="project" target="blank" data-type="hc">  <!--target="blank": 링크가 현재창이 아니라 새창에서 열림, 깃허브로 연결되게-->
+                    <img src="imgs/projects/movie1.jpg" alt="project1" class="project__img">
+                    <div class="project__description">  <!--프로젝트 이름과 기술 나오게-->
+                        <h3>movie1</h3>
+                        <!--<div class="project__description__line"></div> 내가 한것-->
+                        <span>Pride and Prejudice</span>
+                    </div>
+                </a>
+                <a href="#" class="project" target="blank" data-type="hc">  <!--target="blank": 링크가 현재창이 아니라 새창에서 열림, 깃허브로 연결되게-->
+                    <img src="imgs/projects/movie2.jpg" alt="project2" class="project__img">
+                    <div class="project__description">  <!--프로젝트 이름과 기술 나오게-->
+                        <h3>movie2</h3>
+                        <!--<div class="project__description__line"></div> 내가 한것-->
+                        <span>Cinema Paradiso</span>
+                    </div>
+                </a>
+
+                <a href="#" class="project" target="blank" data-type="hcj">  
+                    <img src="imgs/projects/music1.jpg" alt="project2" class="project__img">
+                    <div class="project__description">  
+                        <h3>music1</h3>
+                        <!--<div class="project__description__line"></div> 내가 한것-->
+                        <span>Taeyeon-11:11</span>
+                    </div>
+                </a>
+                <a href="#" class="project" target="blank" data-type="hcj">  
+                    <img src="imgs/projects/music2.jpg" alt="project2" class="project__img">
+                    <div class="project__description">  
+                        <h3>music2</h3>
+                        <!--<div class="project__description__line"></div> 내가 한것-->
+                        <span>Alan Walker-Faded</span>
+                    </div>
+                </a>
+
+                <a href="#" class="project" target="blank" data-type="react">  
+                    <img src="imgs/projects/food1.jpg" alt="project3" class="project__img">
+                    <div class="project__description">  
+                        <h3>food1</h3>
+                        <!--<div class="project__description__line"></div> 내가 한것-->
+                        <span>Waffle</span>
+                    </div>
+                </a>
+                <a href="#" class="project" target="blank" data-type="react">  
+                    <img src="imgs/projects/food2.jpg" alt="project3" class="project__img">
+                    <div class="project__description">  
+                        <h3>food2</h3>
+                        <!--<div class="project__description__line"></div> 내가 한것-->
+                        <span>Caramel Popcorn</span>
+                    </div>
+                </a>
+            </div>    
+        </div>
+    </section>
+    
+    <!-- Testimonials -->
+    <section id="testimonials" class="section">
+        <div class="section__container"> <!--추가-->
+            <h1>Testimonials</h1>
+            <h3>See what they say about me</h3>
+    
+            <div class="testimonials">   <!--박스태그-->
+                <div class="testimonial">  <!--박스태그-->
+                    <img src="imgs/testimonial/people1.jpg" alt="People" class="testimonial__avatar">
+                    <div class="testimonial__speech-bubble">  
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere omnis quam, tempora suscipit, temporibus reiciendis optio eligendi velit eum aut incidunt obcaecati est quas nulla ab, vel itaque nisi harum.</p>
+                        <p class="name"> <a href="#">Jack</a> / Samsung</p>  <!--이름 누르면 그 사람의 깃허브로 가도록-->
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial__speech-bubble">
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel cum commodi expedita quidem autem molestias porro cupiditate optio dolorem iste. Ex perspiciatis odio porro consequatur ad maiores, aperiam reiciendis officia.</p>
+                        <p class="name"> <a href="#">Ellie</a> / Samsung</p>  
+                    </div>
+                    <img src="imgs/testimonial/people2.jpg" alt="People" class="testimonial__avatar">
+                </div>
+            </div>    
+        </div>
+    </section>
+    
+    <!-- Contact -->
+    <section id="contact" class="section">
+        <h1 class="contact__title">Let's talk</h1>  <!--*공통적인 거라 원래 class이름 지정안하는데, 흰색으로 꾸며야돼서 class이름 지정-->
+        <h2 class="contact__email">yjshin1003@naver.com</h2>
+        <div class="contact__links">
+            <a href="https://github.com/ujiniverse" target="blank" >
+                <i class="fab fa-github"></i>
+            </a>
+        </div>
+        <p class="contact__rights">2022 Yoojin - All rights reserved</p>
+    </section>
+
+    <!--Arrow up-->
+    <button class="arrow-up">
+        <i class="fas fa-arrow-up"></i>
+    </button> <!--arrow up button 만들기-->
+</body>
+<html>
