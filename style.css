@@ -200,7 +200,7 @@ p {
 .section__container {
   max-width: 1200px; /*★*/
   margin: auto;
-} /*이 class 만들어서 html에(About,Skills,Work,Testimonials) class추가하기*/
+} /*이 class 만들어서 html에(About,Skills,Like,Testimonials) class추가하기*/
 
 /* <About> */
 .about__majors {
@@ -299,9 +299,9 @@ p {
   padding: 20px;
 }
 
-/* <Work> */
+/* <Like> */
 /*categories*/
-.work__categories {
+.like__categories {
   margin: 40px;
 } /*스페이싱 주기*/
 
@@ -345,7 +345,7 @@ p {
 } /*category__count가 평소에 위치가 위쪽으로 올라가있고 눈에 보이지 않다가, category__btn의 class가 active거나 마우스가 올라갔을 때 category__count의 위치가 아래로 내려오면서 눈에 보이도록 설정*/
 
 /*projects*/
-.work__projects {
+.like__projects {
   display: flex;
   flex-wrap: wrap; /*한줄에 아이템이 꽉차면 자동으로 줄바꿈하도록*/
   justify-content: center;
@@ -354,7 +354,7 @@ p {
   transition: all var(--animation-duration) ease-out; /*anim*/
 }
 
-.work__projects.anim-out {
+.like__projects.anim-out {
   opacity: 0;
   transform: scale(0.96) translateY(40px);
 } /*anim*/
@@ -585,7 +585,7 @@ p {
     flex-direction: column;
   }
 
-  /*Work*/
+  /*Like*/
   .project {
     flex-grow: 1; /*화면에 딱맞게(꽉차게)*/
   }

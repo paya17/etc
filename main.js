@@ -77,10 +77,10 @@ arrowUp.addEventListener('click', ()=>{
 
 
 //Projects
-const workBtnContainer = document.querySelector('.work__categories'); //work버튼들 들어있는 div태그 가져오기
-const projectContainer = document.querySelector('.work__projects'); //프로젝트들 들어있는 div태그 가져오기
+const likeBtnContainer = document.querySelector('.like__categories'); //like버튼들 들어있는 div태그 가져오기
+const projectContainer = document.querySelector('.like__projects'); //프로젝트들 들어있는 div태그 가져오기
 const projects = document.querySelectorAll('.project'); //*각각의 프로젝트를 '배열'로 전부 받아오기
-workBtnContainer.addEventListener("click", (event)=>{
+likeBtnContainer.addEventListener("click", (event)=>{
 
     const filter = event.target.dataset.filter || event.target.parentNode.dataset.filter; //*count제외한 버튼 누른 경우 or count 누른 경우, 'data-filter의 값 받아오기'
     if(filter == null) {
