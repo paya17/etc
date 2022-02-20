@@ -24,7 +24,7 @@
     <!-- Navbar -->
     <nav id="navbar">
         <div class="navbar__logo">  <!-- 2. --> <!-- BEM사용 -->
-            <i class="fas fa-puzzle-piece"></i>  <!--3.아이콘과 이름-->
+            <i class="fas fa-paint-brush"></i>  <!--3.아이콘과 이름-->
             <a href="#">Yoojin</a>
         </div>
         <ul class="navbar__menu">
@@ -32,7 +32,7 @@
             <li class="navbar__menu__item" data-link="#about">About</li>  <!--s.'data'에 이동할 섹션의 id를 정의(추가)-->
             <li class="navbar__menu__item" data-link="#skills">Coding</li>
             <li class="navbar__menu__item" data-link="#like">Like</li>
-            <li class="navbar__menu__item" data-link="#testimonials">Testimonials</li>
+            <li class="navbar__menu__item" data-link="#clubs">Club</li>
             <li class="navbar__menu__item" data-link="#contact">Contact</li>
         </ul>
         <!--Toggle button(추가)-->
@@ -57,34 +57,33 @@
         <h1>About me<span style='font-size:50px;'>&#128105;</span></h1>  <!-- 공통적으로 쓰이기 때문에 bem 사용X-->
 
         <p>
-        I'm a junior frontend engineer. I've been studying html,css,javascript for 3 months. 
-        I'm currently studying in Ewha Womans University.
+        I'm currently studying in Ewha Womans University. I've been studying HTML, CSS, JavaScript, and React for 5 months. 
         </p>  
 
-        <div class="about__majors">  <!-- *Box태그 -->
+        <div class="about__things">  <!-- *Box태그 -->
 
-            <div class="major">  <!-- *Box태그 -->
-                <div class="majors__icon">  
+            <div class="thing">  <!-- *Box태그 -->
+                <div class="things__icon">  
                     <i class="fa-solid fa-school"></i>
                 </div>  
-                <h2 class="majors__title">EWHA</h2>
-                <div class="majors__description">In 4th grade</div>
+                <h2 class="things__title">EWHA</h2>
+                <div class="things__description">In 4th grade</div>
             </div>
 
-            <div class="major">  
-                <div class="majors__icon">  
+            <div class="thing">  
+                <div class="things__icon">  
                     <i class="fa-solid fa-desktop"></i>
                 </div>  
-                <h2 class="majors__title">Junior Coder</h2>
-                <div class="majors__description">Interested in Front-end development</div>
+                <h2 class="things__title">Junior Coder</h2>
+                <div class="things__description">Interested in Front-end development</div>
             </div>
 
-            <div class="major">  
-                <div class="majors__icon">  
-                    <i class="fab fa-react"></i>
+            <div class="thing">  
+                <div class="things__icon">  
+                    <i class="fas fa-guitar"></i>
                 </div>  
-                <h2 class="majors__title">React</h2>
-                <div class="majors__description">etc</div>
+                <h2 class="things__title">Hobby</h2>
+                <div class="things__description">Playing classical guitar</div>
             </div>
 
         </div>
@@ -244,26 +243,29 @@
         </div>
     </section>
     
-    <!-- Testimonials -->
-    <section id="testimonials" class="section">
+    <!-- Clubs -->
+    <section id="clubs" class="section">
         <div class="section__container"> <!--추가-->
-            <h1>Testimonials</h1>
-            <h3>See what they say about me</h3>
+            <h1>Club<span style='font-size:50px;'>&#127939;</span></h1>
+            <h3>Club activities I did</h3>
     
-            <div class="testimonials">   <!--박스태그-->
-                <div class="testimonial">  <!--박스태그-->
-                    <img src="imgs/testimonial/people1.jpg" alt="People" class="testimonial__avatar">
-                    <div class="testimonial__speech-bubble">  
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere omnis quam, tempora suscipit, temporibus reiciendis optio eligendi velit eum aut incidunt obcaecati est quas nulla ab, vel itaque nisi harum.</p>
+            <div class="clubs">   <!--박스태그-->
+                <div class="club">  <!--박스태그-->
+                    <img src="imgs/club/yeyul.jpg" alt="Yeyul" class="club__avatar">
+                    <div class="club__speech-bubble">  
+                        <h2>Yeyul</h2>
+                        <p>Ewha classical guitar club<br>2018.07-2019.08</p>
                         <p class="name"> <a href="#">Jack</a> / Samsung</p>  <!--이름 누르면 그 사람의 깃허브로 가도록-->
                     </div>
                 </div>
-                <div class="testimonial">
-                    <div class="testimonial__speech-bubble">
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel cum commodi expedita quidem autem molestias porro cupiditate optio dolorem iste. Ex perspiciatis odio porro consequatur ad maiores, aperiam reiciendis officia.</p>
+
+                <div class="club">
+                    <div class="club__speech-bubble">
+                        <h2>Phototrace</h2>
+                        <p>Ewha photography club<br>2018.03-2019.12</p>
                         <p class="name"> <a href="#">Ellie</a> / Samsung</p>  
                     </div>
-                    <img src="imgs/testimonial/people2.jpg" alt="People" class="testimonial__avatar">
+                    <img src="imgs/club/phototrace.jpg" alt="Phototrace" class="club__avatar">
                 </div>
             </div>    
         </div>

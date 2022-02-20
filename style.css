@@ -200,17 +200,17 @@ p {
 .section__container {
   max-width: 1200px; /*★*/
   margin: auto;
-} /*이 class 만들어서 html에(About,Skills,Like,Testimonials) class추가하기*/
+} /*이 class 만들어서 html에(About,Skills,Like,Clubs) class추가하기*/
 
 /* <About> */
-.about__majors {
+.about__things {
   display: flex;
   justify-content: space-evenly; /*엘리쌤은 space-between 썼음*/
 
   margin: 80px 0;
 }
 
-.majors__icon {
+.things__icon {
   width: 170px; /*아이콘의 사이즈가 아니라, 아이콘이 들어있는 div박스의 사이즈!*/
   height: 170px;
   line-height: 170px; /*아이콘이 div박스의 수직으로 중간에 오도록*/
@@ -222,21 +222,21 @@ p {
   color: var(--color-blue); /*아이콘 색깔 바뀜*/
 }
 
-.majors__icon:hover i {
+.things__icon:hover i {
   color: var(--color-pink);
   transform: rotate(-30deg) scale(1.1);
 } /*'아이콘 박스'에 마우스가 올라가면, '아이콘'이 분홍색으로 바뀌고,왼쪽으로 30도 회전, 1.1배 커지도록*/
 
-.majors__icon i {
+.things__icon i {
   transition: all var(--animation-duration) ease;
 } /*아이콘에 smooth한 변화도 주기*/
 
-.majors__title,
-.majors__description {
+.things__title,
+.things__description {
   color: var(--color-dark-grey);
 }
 
-.majors__description {
+.things__description {
   font-size: var(--font-small);
 }
 
@@ -429,50 +429,51 @@ p {
 } 
 */
 
-/* <Testimonials> */
-#testimonials {
+/* <Clubs> */
+#clubs {
   background-color: var(--color-light-white);
 }
 
-.testimonials {
+.clubs {
   margin: 40px;
 } /*스페이싱 주기*/
 
-.testimonial {
+.club {
   display: flex;
   margin: 32px 0;
 }
 
-.testimonial__avatar {
-  width: 150px;
-  height: 150px;
+.club__avatar {
+  width: 170px;
+  height: 170px;
   border-radius: 50%;
   margin: 12px;
 }
 
-.testimonial__avatar:nth-child(odd) {
+.club__avatar:nth-child(odd) {
   margin-right: 40px;
 } /*nth-child이용해서 odd(홀수번째)일 때*/
 
-.testimonial__avatar:nth-child(even) {
+.club__avatar:nth-child(even) {
   margin-left: 40px;
 } /*nth-child이용해서 even(짝수번째)일 때*/
 
-.testimonial__speech-bubble {
+.club__speech-bubble {
   padding: 18px; /*conent 안쪽으로 넣어주기*/
   background-color: var(--color-white);
   border-radius: var(--size-boder-radius);
+  width: 73%;
 
   display: flex;
   flex-direction: column;
   justify-content: center; /* *이거 포함해서 위에 세줄 내가 넣은 것*/
 }
 
-.testimonial__speech-bubble p {
+.club__speech-bubble p {
   color: var(--color-light-grey);
 } /*위에서 디폴트로 설정돼있던 p태그의 색상을 바꿔줌*/
 
-.testimonial__speech-bubble a {
+.club__speech-bubble a {
   color: var(--color-pink);
 } /*위에서 디폴트로 설정돼있던 a태그의 색상을 바꿔줌*/
 
@@ -569,14 +570,14 @@ p {
   }
 
   /*About*/
-  .about__majors {
+  .about__things {
     flex-direction: column;
 
     margin-top: 30px;
     margin-bottom: 0px;
   }
 
-  .major {
+  .thing {
     margin-bottom: 30px;
   }
 
@@ -595,26 +596,26 @@ p {
     width: 100%;
   }
 
-  /*Testimonials*/
-  .testimonial {
+  /*Clubs*/
+  .club {
     flex-direction: column;
     align-items: center;
   }
 
-  .testimonial__avatar {
-    width: 120px;
-    height: 120px;
+  .club__avatar {
+    width: 130px;
+    height: 130px;
   }
 
-  .testimonial__speech-bubble {
+  .club__speech-bubble {
     order: 1;
-  } /*testimonial이라는 flex-box안에 avatar와 speech bubble이라는 item들이 있는데, 무조건 avatar가 speech bubble보다 먼저 오도록->order속성 이용(order속성의 기본값은 0)*/
+  } /*club이라는 flex-box안에 avatar와 speech bubble이라는 item들이 있는데, 무조건 avatar가 speech bubble보다 먼저 오도록->order속성 이용(order속성의 기본값은 0)*/
 
-  .testimonial__avatar:nth-child(even),
-  .testimonial__avatar:nth-child(odd) {
+  .club__avatar:nth-child(even),
+  .club__avatar:nth-child(odd) {
     margin: 0;
     margin-bottom: 8px;
-  } /*.testimonial__avatar이 아닌 여기에 설정*/
+  } /*.club__avatar이 아닌 여기에 설정*/
 
   /*Scroll*/
   .arrow-up {
