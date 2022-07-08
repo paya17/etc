@@ -13,7 +13,7 @@ const PROXY = window.location.hostname === 'localhost' ? '' : '/proxy';
 //<최상단 트윗 입력 컴포넌트>
 const TopContent = () => {
   const [inputs, setInputs] = useState('');
-  const [isDiasabled, setIsDisabled] = useState(true); // *is함수->true/false(조건문과 함께!)
+  const [isDiasabled, setIsDisabled] = useState(true); // *is~->true/false(조건문과 함께!)
 
 
   const handleInputChange = (e) => {
@@ -86,7 +86,7 @@ const Modal =({isOpenModal, setIsOpenModal, id})=> { // 상위컴포넌트(Conte
   const deletePost = async (id) => {
     const response = await axios.delete(`${PROXY}/posts/`+id)
     .catch(e => console.log(response))
-  }
+  } //'db'에서 삭제
  
 
   return (
@@ -157,7 +157,7 @@ function Main() {
     const response = await axios.get(`${PROXY}/posts`)
     .then(res => setPost(res['data'].reverse()))
     .catch(e => console.log(response))
-  };
+  }; //db에서 가져옴
   
   useEffect(() => {
     getpost();
